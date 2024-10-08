@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constraintHeight="match_parent"
+    app:layout_constraintWidth="match_parent"
+    tools:context=".LoginActivity">
+
+    <LinearLayout
+        android:id="@+id/pnl_MainContain"
+        android:layout_width="409dp"
+        android:layout_height="730dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/pnl_Header"
+            android:layout_width="match_parent"
+            android:layout_height="105dp"
+            android:background="#065D8C"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pnl_Content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_Main"
+                android:contentDescription="@string/pesta_a_de_inicio_de_sesion"
+                app:tabGravity="fill"
+                app:tabSelectedTextColor="@color/design_default_color_primary"
+                app:tabTextColor="@color/design_default_color_primary_variant"
+                app:tabIndicatorColor="@color/design_default_color_secondary"
+                app:tabMode="fixed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vp_Main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
