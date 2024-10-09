@@ -1,16 +1,13 @@
 package com.example.worldpetsmobile;
 
 import android.os.Bundle;
-import android.widget.TableLayout;
-
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -25,16 +22,43 @@ public class LoginActivity extends AppCompatActivity {
 
         setUpView();
         setUpLoginView();
+        prueba();
 
     }
+
+    private void prueba() {
+        int num = 0;
+        int num1 = 5;
+        int resul = num + num1;
+    }
+
+
 
     private void setUpLoginView() {
         this.loginAdapter.addFragment(new PersonFragment(), getString(R.string.personas));
         this.loginAdapter.addFragment(new BusinessFragment(), getString(R.string.empresas));
         viewPagerMain.setAdapter(loginAdapter);
 
+        new TabLayoutMediator(tabLayoutMain, viewPagerMain, new TabLayoutMediator.TabConfigurationStrategy() {
+            @Override
+            public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
+                switch (position){
+                    case 0:
+                        tab.setText("PERSONAS");
+                        break;
+                    case 1:
+                        tab.setText("EMPRESAS");
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }).attach();
+
         //tabLayoutMain.setupWithViewPager(viewPagerMain);
     }
+
+
 
     private void setUpView() {
         this.loginAdapter = new LoginAdapter(getSupportFragmentManager(), getLifecycle());
