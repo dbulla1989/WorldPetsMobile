@@ -6,9 +6,53 @@
     tools:context=".BusinessFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Este es el fragmento de Empresas" />
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/tv_DocumentType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tipo de Documento:"
+            android:textAlignment="textStart" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="textStart" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="45dp" />
+
+        <TextView
+            android:id="@+id/tv_Username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Usuario" />
+
+        <EditText
+            android:id="@+id/txt_Username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Usuario"
+            android:inputType="text" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="45dp" />
+    </LinearLayout>
 
 </FrameLayout>
