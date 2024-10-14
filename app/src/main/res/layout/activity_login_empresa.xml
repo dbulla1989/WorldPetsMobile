@@ -15,7 +15,6 @@
         android:layout_marginTop="50dp"
         android:layout_marginBottom="55dp"
         android:text="Crear Cuenta"
-        android:background="color/transparent"
         android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@+id/tipoid"
         app:layout_constraintEnd_toEndOf="parent"
