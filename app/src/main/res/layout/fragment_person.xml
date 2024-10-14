@@ -6,9 +6,15 @@
     tools:context=".PersonFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Este es el fragmento de Personas" />
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Este es el fragmento de Personas" />
+    </LinearLayout>
 
 </FrameLayout>
