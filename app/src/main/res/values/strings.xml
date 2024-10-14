@@ -5,5 +5,11 @@
     <string name="pesta_a_de_inicio_de_sesion">Pestaña de inicio de sesion</string>
     <string name="personas">PERSONAS</string>
     <string name="empresas">EMPRESAS</string>
-    <string name="txt_crear_cuenta">Crear Cuenta</string>
+    <string-array name="spinner_items">
+        <item>Selecciona tu documento</item>
+        <item>Cédula de Ciudadanía</item>
+        <item>Cédula de Extranjería</item>
+    </string-array>
+    <string name="Open_nav">Open Navigation Drawer</string>
+    <string name="Close_nav">Close Navigation Drawer</string>
 </resources>
