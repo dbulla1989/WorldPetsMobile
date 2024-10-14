@@ -40,14 +40,14 @@
             android:id="@+id/tv_Username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Usuario" />
+            android:text="Correo Electronico" />
 
         <EditText
             android:id="@+id/txt_Username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Usuario"
+            android:hint="example@hotmail.com"
             android:inputType="text" />
 
         <Space
@@ -77,25 +77,34 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="¿Olvidó la contraseña?"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textColor="#3F51B5" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/tv_SingUp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="Singup"
+            android:clickable="true"
+            android:focusable="true"
+            android:linksClickable="true"
+            android:selectAllOnFocus="false"
             android:text="Registrarse"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textColor="#3F51B5" />
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="85dp" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btn_LoginBussines"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="Ingresar" />
     </LinearLayout>
 
 </FrameLayout>

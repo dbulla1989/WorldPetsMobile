@@ -1,5 +1,6 @@
 package com.example.worldpetsmobile;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -70,6 +72,14 @@ public class BusinessFragment extends Fragment {
 
         // Usar findViewById en la vista inflada para obtener el Spinner
         spinner = view.findViewById(R.id.spinner);
+        TextView tvSignUp = view.findViewById(R.id.tv_SingUp);
+        tvSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), LoginBusiness.class);
+                startActivity(intent);
+            }
+        });
 
         // Cargar las options en el Spinner (puedes agregar las options aquí)
         List<String> options = new ArrayList<>();
@@ -85,7 +95,5 @@ public class BusinessFragment extends Fragment {
 
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_business, container, false);
-
-
     }
 }
