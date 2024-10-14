@@ -16,5 +16,7 @@ public class RegisterUser extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_register_user);
 
+
+
     }
 }
