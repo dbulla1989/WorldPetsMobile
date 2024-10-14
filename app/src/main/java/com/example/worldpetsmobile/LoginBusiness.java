@@ -8,11 +8,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class LoginBusiness extends AppCompatActivity {
 
     private Spinner spinner;
     private EditText text;
@@ -26,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         spinner = findViewById(R.id.spinner);
-        text = findViewById(R.id.txt_id);
-        text1 = findViewById(R.id.txt_key);
+        text = findViewById(R.id.txt_email);
+        text1 = findViewById(R.id.txt_password);
         button = findViewById(R.id.btn_ingresar);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -50,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                Intent intent = new Intent(LoginBusiness.this, LoginActivity.class);
                 startActivity(intent);
             }
         });
