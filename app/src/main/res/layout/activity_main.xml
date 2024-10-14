@@ -4,75 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:fitsSystemWindows="true"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:foreground="@mipmap/world_pets">
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Crear Cuenta"
-        android:textColor="#000000"
-        tools:layout_editor_absoluteX="140dp"
-        tools:layout_editor_absoluteY="82dp" />
-
-    <TextView
-        android:id="@+id/tipoid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tipo de documento"
-        android:textColor="#B05A5A5A"
-        tools:layout_editor_absoluteX="43dp"
-        tools:layout_editor_absoluteY="224dp" />
-
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="289dp"
-        android:layout_height="29dp"
-        tools:layout_editor_absoluteX="51dp"
-        tools:layout_editor_absoluteY="289dp" />
-
-    <TextView
-        android:id="@+id/numid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Número de documento"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="374dp" />
-
-    <EditText
-        android:id="@+id/txt_id"
-        android:layout_width="233dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="415dp" />
-
-    <TextView
-        android:id="@+id/password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Contraseña"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="519dp" />
-
-    <EditText
-        android:id="@+id/txt_key"
-        android:layout_width="233dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPassword"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="565dp" />
-
-    <Button
-        android:id="@+id/btn_ingresar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ingresar"
-        tools:layout_editor_absoluteX="164dp"
-        tools:layout_editor_absoluteY="643dp" />
-
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="730dp"
+        android:foreground="@drawable/pets"
+        android:foregroundGravity="fill_horizontal|fill_vertical|fill"
+        android:orientation="vertical"
+        android:alpha="0.27"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
