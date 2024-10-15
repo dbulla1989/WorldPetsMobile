@@ -1,5 +1,6 @@
 package com.example.worldpetsmobile;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,15 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -58,7 +68,56 @@ public class PersonFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_person, container, false);
+        Spinner spinner = view.findViewById(R.id.spinner);
+        List<String> options = new ArrayList<>();
+        options.add("Cedula de Ciudadania");
+        options.add("Cedula de Extranjeria");
+        options.add("Pasaporte");
+        options.add("Permiso de Permanencia");
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, options);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+
+        EditText txtUser = view.findViewById(R.id.txt_UsernamePerson);
+        EditText txtPass = view.findViewById(R.id.txt_PasswordPerson);
+        TextView tvSignUp = view.findViewById(R.id.tv_SingUp);
+        tvSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), RegisterUser.class);
+                startActivity(intent);
+            }
+        });
+
+        Button btnLogin = view.findViewById(R.id.btn_LoginPersons);
+
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String username = txtUser.getText().toString();
+                String password = txtPass.getText().toString();
+
+                if (username.isEmpty() || password.isEmpty()){
+                    Toast.makeText(getActivity(), "El usuario o la contraseña no pueden ir vacios.", Toast.LENGTH_SHORT).show();
+                } else if (!username.equals("Admin") || !password.equals("Admin")) {
+                    Toast.makeText(getActivity(), "Datos incorrectos", Toast.LENGTH_SHORT).show();
+                } else if (username.equals("Admin") && password.equals("Admin")) {
+                    Toast.makeText(getActivity(), "Bienvenido", Toast.LENGTH_SHORT).show();
+                    // Crear un Intent para iniciar SecondActivity
+                    Intent intent = new Intent(getActivity(), MainApplicaton.class);
+                    // Iniciar SecondActivity
+                    startActivity(intent);
+                }
+
+            }
+        });
+
+        return  view;
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_person, container, false);
+        //return inflater.inflate(R.layout.fragment_person, container, false);
     }
 }

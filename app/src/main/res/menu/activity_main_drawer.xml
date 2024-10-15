@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Inicio" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Servicios Veterinarios" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Servicios Esteticos" />
+    </group>
+
+    <item
+        android:title="Ajustes de Usuario">
+
+        <menu>
+            <item
+                android:id="@+id/updateCustomer"
+                android:icon="@drawable/pets"
+                android:title="Actualizar Datos"/>
+            <item
+                android:id="@+id/logout"
+                android:icon="@drawable/pets"
+                android:title="Cerrar sesion"/>
+        </menu>
+    </item>
+</menu>
