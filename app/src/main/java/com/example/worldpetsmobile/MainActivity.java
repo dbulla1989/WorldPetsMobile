@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
                 // Opcional: Cerrar la actividad actual
                 finish();
             }
-        }, 8000); // tiempo en milisegundos
+        }, 3000); // tiempo en milisegundos
 
 
 

@@ -32,10 +32,10 @@ public class LoginActivity extends AppCompatActivity {
         int resul = num + num1;
     }
 
-
+//this.loginAdapter.addFragment(new PersonFragment(), getString(R.string.personas));
 
     private void setUpLoginView() {
-        this.loginAdapter.addFragment(new PersonFragment(), getString(R.string.personas));
+        this.loginAdapter.addFragment(new MapsFragment(), getString(R.string.personas));
         this.loginAdapter.addFragment(new BusinessFragment(), getString(R.string.empresas));
         viewPagerMain.setAdapter(loginAdapter);
 
