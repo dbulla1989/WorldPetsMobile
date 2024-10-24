@@ -52,13 +52,26 @@
             android:textColorHint="#888888" />
 
         <EditText
-            android:id="@+id/editTextName"
+            android:id="@+id/editTextNames"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:background="#FFFFFF"
             android:fontFamily="sans-serif-light"
-            android:hint="Nombre completo"
+            android:hint="Nombres"
+            android:inputType="textPersonName"
+            android:padding="16dp"
+            android:textColor="#333333"
+            android:textColorHint="#888888" />
+
+        <EditText
+            android:id="@+id/editTextSurenames"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="#FFFFFF"
+            android:fontFamily="sans-serif-light"
+            android:hint="Apellidos"
             android:inputType="textPersonName"
             android:padding="16dp"
             android:textColor="#333333"

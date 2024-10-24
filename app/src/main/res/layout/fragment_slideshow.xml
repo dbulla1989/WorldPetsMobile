@@ -32,10 +32,10 @@
                 android:gravity="center">
 
                 <ImageView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="200dp"
-                    android:src="@drawable/gromming"
-                    android:scaleType="centerCrop" />
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/peluqueria_canina" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -67,7 +67,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:src="@drawable/shop"
+                    android:src="@drawable/peluqueria_canina"
                     android:scaleType="centerCrop" />
 
                 <TextView
@@ -99,7 +99,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:src="@drawable/walk"
+                    android:src="@drawable/peluqueria_canina"
                     android:scaleType="centerCrop" />
 
                 <TextView
@@ -132,7 +132,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:src="@drawable/spa"
+                    android:src="@drawable/peluqueria_canina"
                     android:scaleType="centerCrop" />
 
                 <TextView
