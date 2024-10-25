@@ -39,6 +39,18 @@
                 android:textColor="#404040"
                 android:textSize="30sp"
                 android:textStyle="bold" />
+            <EditText
+                android:id="@+id/editTextNIT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="#FFFFFF"
+                android:fontFamily="sans-serif-light"
+                android:hint="NIT"
+                android:inputType="text"
+                android:padding="16dp"
+                android:textColor="#333333"
+                android:textColorHint="#888888" />
 
             <EditText
                 android:id="@+id/editTextCompanyName"
@@ -48,19 +60,6 @@
                 android:background="#FFFFFF"
                 android:fontFamily="sans-serif-light"
                 android:hint="Nombre de la Empresa"
-                android:inputType="text"
-                android:padding="16dp"
-                android:textColor="#333333"
-                android:textColorHint="#888888" />
-
-            <EditText
-                android:id="@+id/editTextNIT"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:background="#FFFFFF"
-                android:fontFamily="sans-serif-light"
-                android:hint="NIT"
                 android:inputType="text"
                 android:padding="16dp"
                 android:textColor="#333333"
