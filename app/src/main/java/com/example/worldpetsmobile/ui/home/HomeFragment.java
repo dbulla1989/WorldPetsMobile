@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -13,7 +12,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.worldpetsmobile.CardAdapter;
-import com.example.worldpetsmobile.Pet;
+import com.example.worldpetsmobile.entities.Pet;
 import com.example.worldpetsmobile.R;
 import com.example.worldpetsmobile.databinding.FragmentHomeBinding;
 
@@ -43,6 +42,7 @@ public class HomeFragment extends Fragment {
         data = new ArrayList<>();
         data.add(new Pet(R.drawable.pet_image, "Max", "Labrador", 3));
         data.add(new Pet(R.drawable.pet_image, "Bella", "Golden Retriever", 2));
+        data.add(new Pet(R.drawable.pet_image, "Firulais", "Chandis", 20));
         // Agrega más mascotas según sea necesario
 
         adapter = new CardAdapter(data);

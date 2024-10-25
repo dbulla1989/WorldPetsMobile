@@ -1,4 +1,4 @@
-package com.example.worldpetsmobile;
+package com.example.worldpetsmobile.entities;
 
 public class Pet {
     private int imageResourceId;
