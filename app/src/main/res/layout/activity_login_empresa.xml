@@ -39,6 +39,14 @@
                 android:textColor="#404040"
                 android:textSize="30sp"
                 android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spinnerContribuyente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="#FFFFFF" />
+
             <EditText
                 android:id="@+id/editTextNIT"
                 android:layout_width="match_parent"
@@ -59,8 +67,47 @@
                 android:layout_marginBottom="16dp"
                 android:background="#FFFFFF"
                 android:fontFamily="sans-serif-light"
-                android:hint="Nombre de la Empresa"
+                android:hint="Razón social"
                 android:inputType="text"
+                android:padding="16dp"
+                android:textColor="#333333"
+                android:textColorHint="#888888" />
+
+            <EditText
+                android:id="@+id/editTextLegalRpresentative"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="#FFFFFF"
+                android:fontFamily="sans-serif-light"
+                android:hint="Representante Legal"
+                android:inputType="text"
+                android:padding="16dp"
+                android:textColor="#333333"
+                android:textColorHint="#888888" />
+
+            <EditText
+                android:id="@+id/editTextEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="#FFFFFF"
+                android:fontFamily="sans-serif-light"
+                android:hint="Correo eléctronico"
+                android:inputType="textEmailAddress"
+                android:padding="16dp"
+                android:textColor="#333333"
+                android:textColorHint="#888888" />
+
+            <EditText
+                android:id="@+id/editTextPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="#FFFFFF"
+                android:fontFamily="sans-serif-light"
+                android:hint="Teléfono"
+                android:inputType="phone"
                 android:padding="16dp"
                 android:textColor="#333333"
                 android:textColorHint="#888888" />
@@ -170,12 +217,11 @@
 
 
             <Button
-                android:id="@+id/buttonRegister"
+                android:id="@+id/buttonRegisterCompany"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#0056b3"
                 android:fontFamily="sans-serif-medium"
-                android:onClick="Registro"
                 android:padding="14dp"
                 android:text="Registrar "
                 android:textColor="#FFFFFF"

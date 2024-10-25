@@ -6,10 +6,9 @@
     <string name="personas">PERSONAS</string>
     <string name="empresas">EMPRESAS</string>
     <string name="txt_crear_cuenta">REGISTRAR</string>
-    <string-array name="spinner_items">
-        <item>Selecciona tu documento</item>
-        <item>Cédula de Ciudadanía</item>
-        <item>Cédula de Extranjería</item>
+    <string-array name="tipo_contribuyentes">
+        <item>NIT</item>
+        <item>RUT</item>
     </string-array>
     <string name="Open_nav">Open Navigation Drawer</string>
     <string name="Close_nav">Close Navigation Drawer</string>
