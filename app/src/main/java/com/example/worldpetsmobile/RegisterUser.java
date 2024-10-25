@@ -72,25 +72,44 @@ public class RegisterUser extends AppCompatActivity {
             return;
         }
 
-        JSONObject jsonObject = new JSONObject();
-        jsonObject.put("identificationType", tipoDocumento.getSelectedItem().toString());
-        jsonObject.put("identification", idNumber);
-        jsonObject.put("names", name);
-        jsonObject.put("surnames", surename);
-        jsonObject.put("cellPhone", phone);
-        jsonObject.put("email", email);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                JSONObject jsonObject = new JSONObject();
+                try {
+                    jsonObject.put("identificationType", tipoDocumento.getSelectedItem().toString());
+                    jsonObject.put("identification", idNumber);
+                    jsonObject.put("names", name);
+                    jsonObject.put("surnames", surename);
+                    jsonObject.put("cellPhone", phone);
+                    jsonObject.put("email", email);
 
-        JSONObject credentials = new JSONObject();
-        credentials.put("username", email);
-        credentials.put("password", password);
+                    JSONObject credentials = new JSONObject();
+                    credentials.put("username", email);
+                    credentials.put("password", password);
 
-        jsonObject.put("userRequest", credentials);
+                    jsonObject.put("userRequest", credentials);
 
-        String response = GlobalResource.getInstance().SendRequest("api/Person", "POST", jsonObject.toString());
-        if (!response.isEmpty()){
-            Toast.makeText (this, "El usuario se registro correctamente.", Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(RegisterUser.this , LoginActivity.class);
-            startActivity(intent);
-        }
+                    // Realizar la solicitud en el hilo de fondo
+                    String response = GlobalResource.getInstance().SendRequest("api/Person", "POST", jsonObject.toString());
+
+                    if (!response.isEmpty()) {
+                        // Mover el código de la interfaz de usuario al hilo principal
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(RegisterUser.this, "El usuario se registró correctamente.", Toast.LENGTH_LONG).show();
+                                Intent intent = new Intent(RegisterUser.this, LoginActivity.class);
+                                startActivity(intent);
+                            }
+                        });
+                    }
+                } catch (JSONException e) {
+                    throw new RuntimeException(e);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        }).start();
     }
 }

@@ -67,7 +67,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:src="@drawable/peluqueria_canina"
+                    android:src="@drawable/accesorios"
                     android:scaleType="centerCrop" />
 
                 <TextView
@@ -99,7 +99,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:src="@drawable/peluqueria_canina"
+                    android:src="@drawable/walk"
                     android:scaleType="centerCrop" />
 
                 <TextView
@@ -132,7 +132,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:src="@drawable/peluqueria_canina"
+                    android:src="@drawable/spa"
                     android:scaleType="centerCrop" />
 
                 <TextView
