@@ -15,6 +15,13 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.worldpetsmobile.globalresource.GlobalResource;
+import com.example.worldpetsmobile.ui.home.HomeFragment;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -103,16 +110,45 @@ public class PersonFragment extends Fragment {
 
                 if (username.isEmpty() || password.isEmpty()){
                     Toast.makeText(getActivity(), "El usuario o la contraseña no pueden ir vacios.", Toast.LENGTH_SHORT).show();
-                } else if (!username.equals("Admin") || !password.equals("Admin")) {
-                    Toast.makeText(getActivity(), "Datos incorrectos", Toast.LENGTH_SHORT).show();
-                } else if (username.equals("Admin") && password.equals("Admin")) {
-                    Toast.makeText(getActivity(), "Bienvenido", Toast.LENGTH_SHORT).show();
-                    // Crear un Intent para iniciar SecondActivity
-                    Intent intent = new Intent(getActivity(), MainApplicaton.class);
-                    // Iniciar SecondActivity
-                    startActivity(intent);
-                }
+                } else {
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            try {
+                                String response = GlobalResource.getInstance().SendRequest("api/User/" + username, "GET",null);
 
+                                // Parsear el string a un objeto JSONObject
+                                JSONObject jsonObject = new JSONObject(response);
+
+                                // Obtener los valores de cada propiedad
+                                String user = jsonObject.getString("username");
+                                String pass = jsonObject.getString("password");
+                                getActivity().runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+
+                                        if (username.equals(user) && password.equals(pass)){
+                                            Toast.makeText(getActivity(), "Bienvenido", Toast.LENGTH_SHORT).show();
+                                            Intent intent = new Intent(getActivity(), MainApplicaton.class);
+                                            startActivity(intent);
+                                        } else{
+                                            Toast.makeText(getActivity(), "Datos Incorrectos", Toast.LENGTH_SHORT).show();
+                                        }
+
+                                    }
+                                });
+                            } catch (IOException | JSONException e){
+                                e.printStackTrace();
+                                getActivity().runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Toast.makeText(getActivity(), "Error de conexión", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                            }
+                        }
+                    }).start();
+                }
             }
         });
 

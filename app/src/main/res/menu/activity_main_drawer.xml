@@ -16,6 +16,15 @@
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Servicios Esteticos" />
+        <item
+            android:id="@+id/nav_sedes"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Sedes" />
+
+        <item
+            android:id="@+id/nav_maps_activity"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Mapas" />
     </group>
 
     <item

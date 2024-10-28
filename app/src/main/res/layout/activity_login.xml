@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:scrollbars="vertical"
     app:layout_constraintHeight="match_parent"
     app:layout_constraintWidth="match_parent"
     tools:context=".LoginActivity">

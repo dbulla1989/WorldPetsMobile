@@ -5,7 +5,7 @@
     <string name="pesta_a_de_inicio_de_sesion">Pestaña de inicio de sesion</string>
     <string name="personas">PERSONAS</string>
     <string name="empresas">EMPRESAS</string>
-    <string name="txt_crear_cuenta">EMPRESAS</string>
+    <string name="txt_crear_cuenta">REGISTRAR</string>
     <string-array name="spinner_items">
         <item>Selecciona tu documento</item>
         <item>Cédula de Ciudadanía</item>
@@ -22,6 +22,7 @@
     <string name="action_settings">Settings</string>
 
     <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_gallery">Servicios Veterinarios</string>
+    <string name="menu_slideshow">Servicios Esteticos</string>
+    <string name="title_activity_maps">Sedes</string>
 </resources>
