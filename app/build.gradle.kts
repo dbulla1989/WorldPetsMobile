@@ -46,8 +46,15 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:4.9.3")
 
     implementation(libs.play.services.maps)
+    // Agrega las dependencias de navegación
+    implementation("androidx.navigation:navigation-fragment-ktx:2.6.0") // Asegúrate de usar la versión más reciente
+    implementation("androidx.navigation:navigation-ui-ktx:2.6.0")
+    implementation(libs.androidx.navigation.fragment)
+    implementation(libs.androidx.navigation.ui)
     //implementation(libs.navigation.runtime)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
+
 }

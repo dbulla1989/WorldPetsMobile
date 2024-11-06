@@ -45,7 +45,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                android:background="#FFFFFF" />
+                android:background="#FFFFFF"
+                />
 
             <EditText
                 android:id="@+id/editTextNIT"
@@ -54,7 +55,7 @@
                 android:layout_marginBottom="16dp"
                 android:background="#FFFFFF"
                 android:fontFamily="sans-serif-light"
-                android:hint="NIT"
+                android:hint="NIT o RUT"
                 android:inputType="text"
                 android:padding="16dp"
                 android:textColor="#333333"
@@ -156,37 +157,44 @@
                     android:id="@+id/checkboxVeterinaria"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Veterinaria" />
+                    android:text="Veterinaria"
+                    android:textColor="#333333"
+                    />
 
                 <CheckBox
                     android:id="@+id/checkboxGrooming"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Grooming" />
+                    android:text="Grooming"
+                    android:textColor="#333333" />
 
                 <CheckBox
                     android:id="@+id/checkboxAlimentacion"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Alimentación" />
+                    android:text="Alimentación"
+                    android:textColor="#333333" />
 
                 <CheckBox
                     android:id="@+id/checkboxEntrenamiento"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Entrenamiento" />
+                    android:text="Entrenamiento"
+                    android:textColor="#333333" />
 
                 <CheckBox
                     android:id="@+id/checkboxGuarderia"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Guardería" />
+                    android:text="Guardería"
+                    android:textColor="#333333" />
 
                 <CheckBox
                     android:id="@+id/checkboxServiciosEmergencia"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Servicios de Emergencia" />
+                    android:text="Servicios de Emergencia"
+                    android:textColor="#333333" />
             </LinearLayout>
 
             <EditText

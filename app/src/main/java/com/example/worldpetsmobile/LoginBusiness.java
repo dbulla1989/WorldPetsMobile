@@ -76,9 +76,10 @@ public class LoginBusiness extends AppCompatActivity {
         // Configuración del Spinner
         Spinner spinnerContribuyente = findViewById(R.id.spinnerContribuyente);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.tipo_contribuyentes, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                R.array.tipo_contribuyentes, R.layout.spinner_dropdown_item); // Usar tu diseño personalizado
+        adapter.setDropDownViewResource(R.layout.spinner_dropdown_item); // Usar el mismo diseño para el menú desplegable
         spinnerContribuyente.setAdapter(adapter);
+
 
         buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,30 +99,31 @@ public class LoginBusiness extends AppCompatActivity {
         String password = editTextPassword.getText().toString().trim();
         String confirmPassword = editTextConfirmPassword.getText().toString().trim();
 
-        // Captura el tipo de contribuyente
+
         Spinner spinnerContribuyente = findViewById(R.id.spinnerContribuyente);
+
         String tipoContribuyente = spinnerContribuyente.getSelectedItem().toString();
 
-        // Validar que los campos obligatorios no estén vacíos
+
         if (TextUtils.isEmpty(nit) || TextUtils.isEmpty(companyName) || TextUtils.isEmpty(address) || TextUtils.isEmpty(password) || TextUtils.isEmpty(confirmPassword)) {
             Toast.makeText(this, "Por favor, completa todos los campos obligatorios", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        // Verificar que las contraseñas coinciden
+
         if (!password.equals(confirmPassword)) {
             Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        // Verificar que al menos un servicio esté seleccionado
+
         if (!checkboxVeterinaria.isChecked() && !checkboxGrooming.isChecked() && !checkboxAlimentacion.isChecked() &&
                 !checkboxEntrenamiento.isChecked() && !checkboxGuarderia.isChecked() && !checkboxServiciosEmergencia.isChecked()) {
             Toast.makeText(this, "Por favor, selecciona al menos un servicio", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        // Aquí puedes usar tipoContribuyente para procesar la información
+
 
         Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show();
         limpiarCampos();
