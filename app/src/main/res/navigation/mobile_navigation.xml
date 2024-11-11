@@ -22,4 +22,19 @@
         android:name="com.example.worldpetsmobile.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+
+    <fragment
+        android:id="@+id/nav_sedes"
+        android:name="com.example.worldpetsmobile.ui.locations.LocationsFragment"
+        android:label="fragment_maps"
+        tools:layout="@layout/fragment_maps" />
+
+    <activity
+        android:id="@+id/nav_maps_activity"
+        android:name="com.example.worldpetsmobile.MapsActivity"
+        android:label="Mapas"
+        tools:layout="@layout/activity_maps"
+        >
+
+    </activity>
 </navigation>
