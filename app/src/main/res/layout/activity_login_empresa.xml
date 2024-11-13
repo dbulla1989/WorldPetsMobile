@@ -1,44 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F5F5F5"
-    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".LoginBusiness">
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#23269D"
+        android:padding="16dp">
+
+        <!-- Título de la aplicación -->
+        <TextView
+            android:id="@+id/header_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="AGREGAR EMPRESA"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:gravity="center"
             android:orientation="vertical"
             android:paddingHorizontal="28dp"
             android:paddingVertical="16dp">
-
-            <TextView
-                android:id="@+id/textViewTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:layout_marginBottom="24dp"
-                android:fontFamily="sans-serif-medium"
-                android:text="Registro de Empresa"
-                android:textColor="#404040"
-                android:textSize="30sp"
-                android:textStyle="bold" />
 
             <Spinner
                 android:id="@+id/spinnerContribuyente"
@@ -240,4 +244,4 @@
 
     </ScrollView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
