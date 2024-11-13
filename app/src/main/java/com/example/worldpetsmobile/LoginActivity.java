@@ -33,7 +33,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-
     private void setUpLoginView() {
         this.loginAdapter.addFragment(new PersonFragment(), getString(R.string.personas));
         this.loginAdapter.addFragment(new BusinessFragment(), getString(R.string.empresas));

@@ -6,11 +6,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/pets"
-        android:alpha="0.25"></ImageView>
+        android:alpha="0.25">
+    </ImageView>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -38,7 +40,7 @@
                 android:layout_marginStart="320dp"
                 android:contentDescription="Logo"
                 android:src="@mipmap/world_pets"
-                app:tint="@color/white"/>
+                app:tint="@color/white" />
 
             <TextView
                 android:id="@+id/header_title"
@@ -83,6 +85,7 @@
                 tools:ignore="NotSibling">
 
                 <LinearLayout
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
@@ -175,14 +178,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </RelativeLayout>
 
-    <!-- Contenido del Navigation Drawer -->
-    <!--<com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        app:menu="@menu/drawer_menu" /> -->
-    </androidx.drawerlayout.widget.DrawerLayout>
+</androidx.drawerlayout.widget.DrawerLayout>
 
-<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+
 
