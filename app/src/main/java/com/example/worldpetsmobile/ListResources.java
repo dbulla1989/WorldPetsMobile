@@ -21,13 +21,15 @@ import java.util.List;
 public class ListResources extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    private CardAdapter adapter;
+    private ServiceCardAdapter adapter;
     private List<Service> data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_resources); // Cambia a tu layout de Activity
+
+        ArrayList<Service> petList = getIntent().getParcelableArrayListExtra("petList");
 
         FloatingActionButton fab = findViewById(R.id.fabService);
 //        fab.setOnClickListener(new View.OnClickListener() {
@@ -43,13 +45,13 @@ public class ListResources extends AppCompatActivity {
         recyclerView.setLayoutManager(new GridLayoutManager(this, 1)); // Una columna
 
         // Datos de ejemplo
-        data = new ArrayList<>();
+        //data = new ArrayList<>();
 //        data.add(new Service(, "Max", "Labrador", 3));
 //        data.add(new Service(R.drawable.pet_image, "Bella", "Golden Retriever", 2));
 //        data.add(new Service(R.drawable.pet_image, "Firulais", "Chandis", 20));
 //        // Agrega más mascotas según sea necesario
 
-//        adapter = new CardAdapter(data);
-//        recyclerView.setAdapter(adapter);
+        adapter = new ServiceCardAdapter(petList);
+        recyclerView.setAdapter(adapter);
     }
 }

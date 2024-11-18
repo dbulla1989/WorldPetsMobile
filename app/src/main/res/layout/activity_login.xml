@@ -5,52 +5,70 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:scrollbars="vertical"
-    app:layout_constraintHeight="match_parent"
-    app:layout_constraintWidth="match_parent"
+    android:fitsSystemWindows="true"
     tools:context=".LoginActivity">
 
-    <LinearLayout
-        android:id="@+id/pnl_MainContain"
-        android:layout_width="409dp"
-        android:layout_height="730dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
         <LinearLayout
-            android:id="@+id/pnl_Header"
+            android:id="@+id/pnl_MainContain"
             android:layout_width="match_parent"
-            android:layout_height="105dp"
-            android:background="#065D8C"
-            android:orientation="horizontal">
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/pnl_Content"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tab_Main"
-                android:contentDescription="@string/pesta_a_de_inicio_de_sesion"
-                app:tabGravity="fill"
-                app:tabSelectedTextColor="@color/design_default_color_primary"
-                app:tabTextColor="@color/design_default_color_primary_variant"
-                app:tabIndicatorColor="@color/design_default_color_secondary"
-                app:tabMode="fixed"
+            <LinearLayout
+                android:id="@+id/pnl_Header"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="105dp"
+                android:background="#065D8C"
+                android:orientation="horizontal">
 
-            <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/vp_Main"
+                <RelativeLayout
+                    android:id="@+id/header"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#23269D"
+                    android:padding="16dp">
+
+                    <!-- Título de la aplicación -->
+                    <TextView
+                        android:id="@+id/header_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:gravity="center"
+                        android:text="WORLD PETS"
+                        android:textColor="#FFFFFF"
+                        android:textSize="48sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/pnl_Content"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tab_Main"
+                    android:contentDescription="@string/pesta_a_de_inicio_de_sesion"
+                    app:tabGravity="fill"
+                    app:tabSelectedTextColor="@color/design_default_color_primary"
+                    app:tabTextColor="@color/design_default_color_primary_variant"
+                    app:tabIndicatorColor="@color/design_default_color_secondary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/vp_Main"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

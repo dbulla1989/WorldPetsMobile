@@ -15,7 +15,7 @@ public class GlobalResource {
     private static GlobalResource instance;
     private final OkHttpClient client;
 
-    public GlobalResource (){
+    public GlobalResource() {
         client = new OkHttpClient();
     }
 
@@ -27,22 +27,17 @@ public class GlobalResource {
     }
 
     public String SendRequest(String uri, String method, String jsonBody) throws IOException {
-        /*Request request = new Request.Builder()
-                .url(endpoint + url)
-                .build();*/
         Request request;
         RequestBody body = null;
 
         String url = endpoint + uri;
 
-        // Si hay un cuerpo JSON, lo usamos en POST, PUT
         if (jsonBody != null && (method.equals("POST") || method.equals("PUT"))) {
             body = RequestBody.create(jsonBody, MediaType.parse("application/json; charset=utf-8"));
         }
 
         String credentials = Credentials.basic("11200336", "60-dayfreetrial");
 
-        // Crear la petición según el método HTTP y agregar el header de Basic Auth
         switch (method) {
             case "GET":
                 request = new Request.Builder()
@@ -96,11 +91,6 @@ public class GlobalResource {
 
         // Ejecutar la petición
         try (Response response = client.newCall(request).execute()) {
-            /*if (!response.isSuccessful()) {
-                throw new IOException("Unexpected code " + response);
-            }*/
-
-            // Devolver el cuerpo de la respuesta como String
             return response.body().string();
         } catch (IOException e) {
             e.printStackTrace();

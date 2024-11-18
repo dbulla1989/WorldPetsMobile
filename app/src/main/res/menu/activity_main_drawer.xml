@@ -16,19 +16,15 @@
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Servicios Esteticos" />
-        <item
-            android:id="@+id/nav_sedes"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Sedes" />
 
         <item
             android:id="@+id/nav_maps_activity"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Mapas" />
+            android:title="Sedes" />
     </group>
 
-    <item
-        android:title="Ajustes de Usuario">
+    <!--item
+        android:title="Ajustes de Usuario:">
 
         <menu>
             <item
@@ -40,5 +36,6 @@
                 android:icon="@drawable/pets"
                 android:title="Cerrar sesion"/>
         </menu>
-    </item>
+    </item-->
+
 </menu>

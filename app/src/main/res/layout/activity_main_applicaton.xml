@@ -12,7 +12,7 @@
         android:id="@+id/app_bar_main_applicaton"
         layout="@layout/app_bar_main_applicaton"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content" />
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
@@ -21,5 +21,44 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_main_applicaton"
-        app:menu="@menu/activity_main_drawer" />
+        app:menu="@menu/activity_main_drawer">
+
+        <LinearLayout
+            android:id="@+id/nav_footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="?attr/colorSurface"
+            android:layout_gravity="bottom">
+
+            <TextView
+                android:id="@+id/footer_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ajustes de Usuario:"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="16sp"
+                android:padding="8dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?attr/colorOnSurface"
+                android:layout_marginBottom="8dp" />
+
+            <Button
+                android:id="@+id/btn_update_customer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Actualizar Datos" />
+
+            <Button
+                android:id="@+id/btn_logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cerrar Sesión" />
+        </LinearLayout>
+    </com.google.android.material.navigation.NavigationView>
+
 </androidx.drawerlayout.widget.DrawerLayout>

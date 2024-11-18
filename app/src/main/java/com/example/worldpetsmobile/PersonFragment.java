@@ -121,6 +121,7 @@ public class PersonFragment extends Fragment {
                                 JSONObject jsonObject = new JSONObject(response);
 
                                 // Obtener los valores de cada propiedad
+                                Integer id = jsonObject.getInt("id");
                                 String user = jsonObject.getString("username");
                                 String pass = jsonObject.getString("password");
                                 getActivity().runOnUiThread(new Runnable() {
@@ -130,6 +131,7 @@ public class PersonFragment extends Fragment {
                                         if (username.equals(user) && password.equals(pass)){
                                             Toast.makeText(getActivity(), "Bienvenido", Toast.LENGTH_SHORT).show();
                                             Intent intent = new Intent(getActivity(), MainApplicaton.class);
+                                            intent.putExtra("id", id);
                                             startActivity(intent);
                                         } else{
                                             Toast.makeText(getActivity(), "Datos Incorrectos", Toast.LENGTH_SHORT).show();

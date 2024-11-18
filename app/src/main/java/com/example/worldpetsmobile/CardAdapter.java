@@ -1,5 +1,8 @@
 package com.example.worldpetsmobile;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,10 +32,16 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Pet pet = data.get(position);
-        holder.imageViewPet.setImageResource(pet.getImageResourceId());
+        Bitmap decodedBitmap = convertBase64ToBitmap(pet.getEncodedImage());
+        holder.imageViewPet.setImageBitmap(decodedBitmap);
         holder.textViewName.setText("Nombre: " + pet.getName());
         holder.textViewBreed.setText("Raza: " + pet.getBreed());
         holder.textViewAge.setText("Edad: " + pet.getAge() + " años");
+    }
+
+    private Bitmap convertBase64ToBitmap(String base64String) {
+        byte[] decodedBytes = Base64.decode(base64String, Base64.DEFAULT);
+        return BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.length);
     }
 
     @Override

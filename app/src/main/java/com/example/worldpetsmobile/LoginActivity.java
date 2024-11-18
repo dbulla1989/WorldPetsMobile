@@ -1,11 +1,13 @@
 package com.example.worldpetsmobile;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import androidx.activity.EdgeToEdge;
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
-
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
@@ -19,19 +21,41 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
-
         setUpView();
         setUpLoginView();
-        prueba();
-
+        handleOnBackPressed();
     }
 
-    private void prueba() {
-        int num = 0;
-        int num1 = 5;
-        int resul = num + num1;
+    private void handleOnBackPressed() {
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                showLogoutDialog();
+            }
+        });
     }
 
+    private void showLogoutDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("¿Desea cerrar la aplicación?");
+
+        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finishAffinity();
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
 
     private void setUpLoginView() {
         this.loginAdapter.addFragment(new PersonFragment(), getString(R.string.personas));
@@ -53,11 +77,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         }).attach();
-
-        //tabLayoutMain.setupWithViewPager(viewPagerMain);
     }
-
-
 
     private void setUpView() {
         this.loginAdapter = new LoginAdapter(getSupportFragmentManager(), getLifecycle());
